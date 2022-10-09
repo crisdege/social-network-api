@@ -12,9 +12,8 @@ app.use(require('./routes'));
 
 // tells mongoose which database to connect to
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/social-network-api',
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/social-network-api',
   {
-    useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
