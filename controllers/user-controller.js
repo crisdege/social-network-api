@@ -11,7 +11,11 @@ const userController = {
         path: 'thoughts',
         select: '-__v',
       })
-
+      // populating friends
+      .populate({
+        path: 'friends',
+        select: '-__v',
+      })
       .select('-__v')
       .sort({ _id: -1 })
       .then((dbUserData) => res.json(dbUserData))
@@ -28,7 +32,10 @@ const userController = {
         path: 'thoughts',
         select: '-__v',
       })
-
+      .populate({
+        path: 'friends',
+        select: '-__v',
+      })
       .select('-__v')
       // return if no user is found
       .then((dbUserData) => {
